@@ -1,0 +1,49 @@
+\documentclass[12 pt, letterpaper, twoside]{article}
+
+\title{logicgate}
+
+\author{V SASHANK REDDY\thanks{ggv sir}}
+
+\usepackage{circuitikz}
+
+
+
+\begin{document}
+
+\maketitle{logic gate for e with the expression e=B'CD'+D'A}
+
+  \begin{circuitikz}                                    \draw
+
+
+(3,-1)node[and port](myand2){}
+
+
+
+(0,-3)node[and port](myand4){}
+
+(3,-4.5)node[and port](myand5){}
+
+(6,-2.5)node[or port](myor6){}
+
+(myand2.bin 2) node[ocirc, left]{}
+(myand4.bin 2) node[ocirc, left]{}
+(myand5.bin 2) node[ocirc, left]{}
+
+(myand2.in 2) node[anchor=east] {D}
+(myand2.in 1) node[anchor=east] {A}
+(myand5.in 2) node[anchor=east] {D}
+(myor6.out) node[anchor=west] {Y}
+
+(myand4.in 1) node[anchor=east] {C}
+(myand4.in 2) node[anchor=east] {B}
+(myand2.out)--(myor6.in 2)
+
+(myand4.out)--(myand5.in 1)
+(myand5.out)--(myor6.in 1)
+
+    \end{circuitikz}
+
+
+
+
+    \end{document}
